@@ -10,6 +10,7 @@ import AppStyle from '../styles/AppStyle';
 
 import Card from '../components/Card';
 import Header from '../components/Header';
+import BigButton from '../components/BigButton';
 import { MyStatusBar } from '../components/CPStatusBar';
 
 export default class HomePage extends React.Component {
@@ -49,6 +50,11 @@ export default class HomePage extends React.Component {
         );
     };
 
+    goToAddExpense = () =>
+    {
+        this.props.navigation.navigate('AddExpense');
+    }    
+
     render() {
         return (
             <SafeAreaView style={styles.container}>
@@ -65,6 +71,8 @@ export default class HomePage extends React.Component {
                     ItemSeparatorComponent={this.itemSeparator}
                     ListHeaderComponent={this.headerComponnet}
                 />
+                
+                <BigButton text='Add Expense' onPress={this.goToAddExpense} />
             </SafeAreaView>
         );
     }
