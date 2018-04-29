@@ -34,8 +34,8 @@ export default class HomePage extends React.Component {
         return <Card data={item} />
     };
 
-    headerComponnet = () => {
-        return <Header text="Hello" />;
+    headerComponent = () => {
+        return <Header text="Hello" backgroundColor={AppStyle.primaryColor} />;
     };
 
     itemSeparator = () => {
@@ -69,10 +69,10 @@ export default class HomePage extends React.Component {
                     renderItem={this.renderItem}
                     keyExtractor={(item, index) => index.toString()}
                     ItemSeparatorComponent={this.itemSeparator}
-                    ListHeaderComponent={this.headerComponnet}
+                    ListHeaderComponent={this.headerComponent}
                 />
                 
-                <BigButton text='Add Expense' onPress={this.goToAddExpense} />
+                <BigButton text='Add Expense' onPress={this.goToAddExpense} backgroundColor={AppStyle.secondaryColor} />
             </SafeAreaView>
         );
     }

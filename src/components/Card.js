@@ -40,12 +40,8 @@ const styles = StyleSheet.create({
         borderRadius: AppStyle.borderRadius,
         paddingVertical: 15,
         paddingHorizontal: 20,
-        // borderWidth: 1,
-        // borderColor: AppStyle.greyLight,
-        // margin: 15,
         marginHorizontal: 5,
         marginVertical: 5,
-        // backgroundColor: AppStyle.backgroundWhite,
     },
     priceContainer: {
         flexDirection: 'row',

@@ -9,7 +9,12 @@ import AppStyle from '../styles/AppStyle';
 export default class Header extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
+            <View
+                style={[
+                    styles.container,
+                    { backgroundColor: this.props.backgroundColor },
+                ]}
+            >
                 <Text style={styles.text}>{this.props.text}</Text>
             </View>
         );
@@ -22,7 +27,6 @@ const styles = StyleSheet.create({
         padding: 30,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: AppStyle.primaryColor,
     },
     text: {
         fontSize: AppStyle.headerFontSize,
