@@ -38,7 +38,7 @@ export default class Card extends React.Component
 const styles = StyleSheet.create({
     container: {
         borderRadius: AppStyle.borderRadius,
-        paddingVertical: 15,
+        paddingVertical: 10,
         paddingHorizontal: 20,
         marginHorizontal: 5,
         marginVertical: 5,

@@ -17,22 +17,23 @@ export default class HomePage extends React.Component {
     constructor() {
         super();
         this.state = {
+            // THIS IS JUST EXAMPLE DATA
             data: [
                 {
                     date: '01/02/18',
                     price: 92.37,
-                    vat: 20.0,
+                    vat: 20.05,
                     reason: 'Employee costs',
                 },
                 {
                     date: '01/02/18',
                     price: 123.42,
-                    vat: 10.0,
+                    vat: 10.02,
                     reason: 'Electricity bill',
                 },
                 {
                     date: '01/02/18',
-                    price: 33.2,
+                    price: 33.27,
                     vat: 24.23,
                     reason: 'Water bill',
                 },
@@ -42,7 +43,7 @@ export default class HomePage extends React.Component {
                     vat: 18.09,
                     reason: 'Ad campaign',
                 },
-                { date: '01/02/18', price: 40.23, vat: 6.02, reason: '' },
+                { date: '01/02/18', price: 40.23, vat: 6.02, reason: 'Domain costs' },
             ],
         };
 
@@ -71,6 +72,9 @@ export default class HomePage extends React.Component {
         );
     };
 
+    /**
+     * An item separator component to be placed between all the rendered items
+     */
     itemSeparator = () => {
         return (
             <View
@@ -83,6 +87,9 @@ export default class HomePage extends React.Component {
         );
     };
 
+    /**
+     * Goes to the AddExpense page
+     */
     goToAddExpense = () => {
         this.props.navigation.navigate('AddExpense');
     };

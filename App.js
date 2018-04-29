@@ -11,3 +11,13 @@ export default class App extends React.Component {
         return <MainStack />;
     }
 }
+
+/**
+ * If I were to finish this app, I would add these things:
+ * - Saving / Loading expenses
+ * - Sorting expenses by date
+ * - A login / signup page
+ * - Better looking expense display items
+ * - Real data
+ * - Add expense validation (make sure all the fields have been filled out)
+ */
