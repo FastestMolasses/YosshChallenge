@@ -13,9 +13,17 @@ export default class Header extends React.Component {
                 style={[
                     styles.container,
                     { backgroundColor: this.props.backgroundColor },
-                ]}
-            >
+                ]}>
                 <Text style={styles.text}>{this.props.text}</Text>
+
+                {/*Only render if we have a sub header*/}
+                {this.props.subHeader ?
+                    (
+                        <Text style={styles.subHeaderText}>
+                            {this.props.subHeader}
+                        </Text>
+                    ) : (null)
+                }
             </View>
         );
     }
@@ -24,7 +32,7 @@ export default class Header extends React.Component {
 // Stores all the styling data for this component
 const styles = StyleSheet.create({
     container: {
-        padding: 30,
+        padding: 25,
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -32,5 +40,9 @@ const styles = StyleSheet.create({
         fontSize: AppStyle.headerFontSize,
         color: AppStyle.white,
         fontWeight: 'bold',
+    },
+    subHeaderText: {
+        fontSize: AppStyle.subHeaderFontSize,
+        color: AppStyle.white,
     },
 });

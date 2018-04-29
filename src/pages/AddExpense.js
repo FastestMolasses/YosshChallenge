@@ -38,8 +38,6 @@ export default class AddExpense extends React.Component {
 
     render() {
         return (
-            // TODO: ADD STATUSBAR,
-            // WRAP BOTTOM PART IN NEW VIEW SO U CAN SET BACKGROUND COLOR
             <SafeAreaView style={styles.container}>
                 <MyStatusBar backgroundColor={AppStyle.grey} />
                 <Header text="Add Expense" backgroundColor={AppStyle.grey} />

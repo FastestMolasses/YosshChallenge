@@ -18,24 +18,57 @@ export default class HomePage extends React.Component {
         super();
         this.state = {
             data: [
-                { date: '01/02/18', price: 92.37, vat: 20.0, reason: 'Employee costs' },
-                { date: '01/02/18', price: 123.42, vat: 10.0, reason: 'Electricity bill' },
-                { date: '01/02/18', price: 33.20, vat: 24.23, reason: 'Water bill' },
-                { date: '01/02/18', price: 89.09, vat: 18.09, reason: 'Ad campaign' },
+                {
+                    date: '01/02/18',
+                    price: 92.37,
+                    vat: 20.0,
+                    reason: 'Employee costs',
+                },
+                {
+                    date: '01/02/18',
+                    price: 123.42,
+                    vat: 10.0,
+                    reason: 'Electricity bill',
+                },
+                {
+                    date: '01/02/18',
+                    price: 33.2,
+                    vat: 24.23,
+                    reason: 'Water bill',
+                },
+                {
+                    date: '01/02/18',
+                    price: 89.09,
+                    vat: 18.09,
+                    reason: 'Ad campaign',
+                },
                 { date: '01/02/18', price: 40.23, vat: 6.02, reason: '' },
             ],
         };
+
+        let date = new Date();
+        this.curDate = date.toLocaleDateString('en-US', {
+            weekday: 'short',
+            day: 'numeric',
+            month: 'short',
+        });
     }
 
     /**
      * This function will be used to render each item in the list
      */
     renderItem = ({ item }) => {
-        return <Card data={item} />
+        return <Card data={item} />;
     };
 
     headerComponent = () => {
-        return <Header text="Hello" backgroundColor={AppStyle.primaryColor} />;
+        return (
+            <Header
+                text="Hello Abe"
+                backgroundColor={AppStyle.primaryColor}
+                subHeader={this.curDate}
+            />
+        );
     };
 
     itemSeparator = () => {
@@ -50,10 +83,15 @@ export default class HomePage extends React.Component {
         );
     };
 
-    goToAddExpense = () =>
-    {
+    goToAddExpense = () => {
         this.props.navigation.navigate('AddExpense');
-    }    
+    };
+
+    addExpense = (expense) =>
+    {
+        // Add the new expense to the top of the list
+        this.state.data.unshift(expense);
+    }
 
     render() {
         return (
@@ -62,7 +100,6 @@ export default class HomePage extends React.Component {
                     backgroundColor={AppStyle.primaryColor}
                     barStyle="light-content"
                 />
-
                 <FlatList
                     style={styles.flatList}
                     data={this.state.data}
@@ -71,8 +108,12 @@ export default class HomePage extends React.Component {
                     ItemSeparatorComponent={this.itemSeparator}
                     ListHeaderComponent={this.headerComponent}
                 />
-                
-                <BigButton text='Add Expense' onPress={this.goToAddExpense} backgroundColor={AppStyle.secondaryColor} />
+
+                <BigButton
+                    text="Add Expense"
+                    onPress={this.goToAddExpense}
+                    backgroundColor={AppStyle.secondaryColor}
+                />
             </SafeAreaView>
         );
     }
