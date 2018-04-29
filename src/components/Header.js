@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: AppStyle.headerFontSize,
-        color: 'white',
+        color: AppStyle.white,
         fontWeight: 'bold',
     },
 });
