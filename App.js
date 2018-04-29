@@ -1,8 +1,13 @@
+/**
+ * Entry point for the program.
+ * Gets the StackNavigator and uses it as the entry point for the program
+ */
+
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { MainStack } from './Router';
 
 export default class App extends React.Component {
     render() {
-        return <View />;
+        return <MainStack />;
     }
 }
